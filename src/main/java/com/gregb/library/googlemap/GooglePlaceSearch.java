@@ -35,14 +35,14 @@ import java.util.Locale;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.http.HttpResponse;
+/*import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
+import org.apache.http.protocol.HttpContext;*/
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -213,7 +213,7 @@ public class GooglePlaceSearch {
 		Document doc = null;
 		
 		protected ArrayList<ContentValues> doInBackground(String... url) {
-			try {
+/*			try {
 				HttpClient httpClient = new DefaultHttpClient();
 				HttpContext localContext = new BasicHttpContext();
 				HttpPost httpPost = new HttpPost(url[0]);
@@ -227,7 +227,7 @@ public class GooglePlaceSearch {
 				e.printStackTrace();
 			} catch (SAXException e) {
 				e.printStackTrace();
-			} 
+			}*/
 			
 			if(doc != null) {
 				status = getStatus(doc);
@@ -246,7 +246,7 @@ public class GooglePlaceSearch {
 			            String ref_url = "https://maps.googleapis.com/maps/api/place/details/xml?"
 			            		+ "reference=" + reference + "&key=" + API_KEY + "&sensor=false";
 
-			            try {
+/*			            try {
 			                HttpClient httpClient = new DefaultHttpClient();
 			                HttpContext localContext = new BasicHttpContext();
 			                HttpPost httpPost = new HttpPost(ref_url);
@@ -256,7 +256,7 @@ public class GooglePlaceSearch {
 			                cv = getReferenceData(cv, builder.parse(in));
 			            } catch (Exception e) {
 			                e.printStackTrace();
-			            }
+			            }*/
 
 			            try {
 				    	    node = nl2.item(getNodeIndex(nl2, "opening_hours"));
@@ -366,11 +366,11 @@ public class GooglePlaceSearch {
 		protected Bitmap doInBackground(BitmapRequest... arg0) {
 			br = arg0[0];
 			
-			HttpClient httpclient = new DefaultHttpClient();   
+/*			HttpClient httpclient = new DefaultHttpClient();
 	        HttpGet request = new HttpGet(arg0[0].getURL()); 
-	        InputStream in = null;
+	        InputStream in = null;*/
 			Bitmap bmp = null;
-	        try {
+/*	        try {
 	            in = httpclient.execute(request).getEntity().getContent();
 	            bmp = BitmapFactory.decodeStream(in);
 	            in.close();
@@ -380,7 +380,7 @@ public class GooglePlaceSearch {
 	            e.printStackTrace();
 	        } catch (IOException e) {
 	            e.printStackTrace();
-	        }
+	        }*/
 	        return bmp;
 		}
 		

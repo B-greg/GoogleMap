@@ -28,14 +28,14 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import com.google.android.gms.maps.CameraUpdateFactory;
+/*import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.PolylineOptions;*/
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -43,12 +43,12 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.http.HttpResponse;
+/*import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
+import org.apache.http.protocol.HttpContext;*/
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -75,18 +75,18 @@ public class GoogleDirection {
     public final static int SPEED_SLOW = 4;
     public final static int SPEED_VERY_SLOW = 5;
     
-	private OnDirectionResponseListener mDirectionListener = null;
-	private OnAnimateListener mAnimateListener = null;
+/*	private OnDirectionResponseListener mDirectionListener = null;
+	private OnAnimateListener mAnimateListener = null;*/
 	
 	private boolean isLogging = false;
 	
-	private LatLng animateMarkerPosition = null;
+/*	private LatLng animateMarkerPosition = null;
 	private LatLng beginPosition = null;
 	private LatLng endPosition = null;
 	private ArrayList<LatLng> animatePositionList = null;
 	private Marker animateMarker = null;
 	private Polyline animateLine = null;
-	private GoogleMap gm = null;
+	private GoogleMap gm = null;*/
 	private int step = -1;
 	private int animateSpeed = -1;
 	private int zoom = -1;
@@ -103,7 +103,7 @@ public class GoogleDirection {
 	
 	private Context mContext = null;
  
-    public GoogleDirection(Context context) { 
+/*    public GoogleDirection(Context context) {
     	mContext = context;
     }
  
@@ -563,9 +563,9 @@ public class GoogleDirection {
     			new Handler().postDelayed(r, animateSpeed);
     		}
     	}
-    };
+    };*/
     
-    public Marker getAnimateMarker() {
+/*    public Marker getAnimateMarker() {
     	return animateMarker;
     }
     
@@ -600,9 +600,9 @@ public class GoogleDirection {
         } else {
         	return end;
         }
-    }
+    }*/
     
-    private float getBearing(LatLng begin, LatLng end) {
+/*    private float getBearing(LatLng begin, LatLng end) {
 		double lat = Math.abs(begin.latitude - end.latitude); 
         double lng = Math.abs(begin.longitude - end.longitude);
     	 if(begin.latitude < end.latitude && begin.longitude < end.longitude)
@@ -614,7 +614,7 @@ public class GoogleDirection {
 		else if(begin.latitude < end.latitude && begin.longitude >= end.longitude)
 			return (float)((90 - Math.toDegrees(Math.atan(lng / lat))) + 270);
     	 return -1;
-    }
+    }*/
     
     public void setCameraUpdateSpeed(int speed) {		
 		if(speed == SPEED_VERY_SLOW) {
