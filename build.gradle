@@ -23,7 +23,7 @@ android {
 
 ext {
     supportLibraryVersion = '26.0.2'
-    gcmLibraryVersion = '12.0.1'
+    gcmLibraryVersion = '15.0.1'
 }
 
 dependencies {
